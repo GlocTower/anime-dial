@@ -28,7 +28,7 @@ const path = {
         js: 'src/static/*.js',
         style: 'public/assets/sass/**/*.sass'
     },
-    clean: './build'
+    clean: './public/assets/**/'
 };
 
 const config = {
@@ -84,6 +84,10 @@ gulp.task('watch', function(){
     watch([path.watch.js], function(event, cb) {
         gulp.start('js:build');
     });
+});
+
+gulp.task('clean', function (cb) {
+    rimraf(path.clean, cb);
 });
 
 gulp.task('default', ['build', 'watch']);
