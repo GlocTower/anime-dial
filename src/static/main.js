@@ -1,0 +1,1 @@
+//= partials/part.js
